@@ -10,6 +10,7 @@
 \usepackage{multirow}
 \usepackage{amsthm}
 \usepackage{pgfplots}
+\usepackage{float}
 
 \pgfplotsset{compat=1.16}
 
@@ -45,9 +46,29 @@ Problem Set 3\\
 
 \subsection{}
 \textit{Write down the components of $p_{i}$ and $p_{f}$ in terms of the electron's energy and direction only. In other words, given that $m_{e}$ is negligible, you can use $|\vec{p}|=E$}
+
+\begin{align*}
+    p_i &= (E_i, E_i,0,0)\\
+    p_f &= (E_f, E_f \cos{\theta},E_f \sin{\theta},0)\\
+\end{align*}
+
+
+
+
 \subsection{}
 \textit{Compute $q^{2}$ and make a sketch of $q^{2}$ as a function of $\cos \theta$.}
-
+\begin{align*}
+    q^{2}&=\left(p_{i}-p_{f}\right)^{2}\\
+    &=p_{i}^{2}+p_{f}^{2}-2 p_i p_{f}\\
+    &=p_{i}^{2}+p_{f}^{2}-2\left(E_{i} E_{f}-\vec{p_i} \cdot \vec{p}_{f}\right)\\
+    &=p_{i}^{2}+p_{f}^{2}-2 E_{i} E_{f}+2\abs{\vec{p}_{i}} \abs{\vec{p}_{f}}  \cos \theta\\
+    &=p_{i}^{2}+p_{f}^{2}-2 E_{i} E_{f}(1-\cos \theta)
+\end{align*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/problem1.png}
+    \label{fig:my_label}
+\end{figure}
 
 \subsection{}
 \textit{Use a trigonometric half-angle formula to express $q^{2}$ in terms of $\sin \theta / 2$ Look up the Rutherford scattering formula and comment on its angular dependence. This is not a coincidence, as we will see when we study Feynman diagrams.}
@@ -182,6 +203,13 @@ $$
 $$
 V_{\mathrm{N}, 3+d}(r \gg R)=-\frac{m_{1} m_{2} G_{\mathrm{N}, 3+d}}{R^{d}} \frac{1}{r}
 $$}
+
+\subsection{}
+\textit{Show that this implies that
+$$
+M_{\mathrm{P}}^{2}=M_{\mathrm{P}, 3+d}^{2}\left(R M_{\mathrm{P}, 3+d}\right)^{d}
+$$
+Suppose that $d=2$ and $R \sim 1 \mathrm{mm}$ : what would $M_{\mathrm{P}, 3+d}$ be, in TeV? Suggest ways in which this theory might be tested experimentally. Taking $M \mathrm{p}, 3+d \sim 1 \mathrm{TeV},$ explore other possibilities for $d$ and $R$.}
 
 
 \newpage
