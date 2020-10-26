@@ -374,23 +374,29 @@ This form of $V_{\mathrm{N}, 3+d}(r \gg R)$ implies that $\frac{G_{N, 3+d}}{R}=G
 \subsection{}
 \textit{Pick a probability (density) distribution that you wish to simulate. (A simple example would be a gaussian.) We call your chosen probability density function $p(x) .$ This is also called the parent distribution. Your goal is to generate a sample drawn from this parent distribution. This will help you appreciate the crucial distinction between the parent distribution (the limiting case of what you would get with infinite sample size) and a sample, which could represent an experimental measurement. One point to realize is that the mean that you measure from the sample is not in general the same as the true mean of the parent distribution; instead it is an estimator of the true mean, and it has an associated uncertainty.}
 
+I choose a Cauchy distribution, with location parameter 0 and size parameter 1. 
 
 \subsection{}
 \textit{Next, find the value of $x=x_{\text {mode }}$ that gives the maximum value $p_{\max }$ of $p(x)$ for all $x .$ This value of $x$ is called the mode of the distribution.}
+
+Because I selected the location parameter to be the origin, $x_{\mathrm{mode}} = 0$.
 
 
 \subsection{}
 \textit{Next, generate a set of $n$ random numbers between 0 and $1 .$ Call these $r_{1}$ $r_{2}, \ldots r_{n} .$ You should try two experiments, one with $n=20$ and one with $n=100$ or greater.}
 
-
+I did my experiment with 20, but could not actually generate more than a few numbers that would not be filtered by step (f). I generated $10^4$ samples, which seemed to give about 20 values that survived step (f). 
 
 \subsection{}
 \textit{Find the minimum value of $x\left(x_{\min }=a\right)$ and the maximum value of $x$ $\left(x_{\max }=b\right)$ such that outside the interval $[a, b]$ the function $p(x)$ is smaller than you care about. You might chose $[a, b]$ to get $99.9 \%$ of the total integrated probability in $p(x) .$ Then, map each of your random numbers $r_{i}$ onto the interval $[a, b]$ with the transformation $x_{i}=a+(b-a) r_{i} .$ For $r_{i}=0$ this gives $x_{i}=a$ and for $r_{i}=1$ this gives $x_{i}=b$}
 
+$99.9\%$ of the integrated probability is on the interval $(-318, 318)$ for the Cauchy distribution with location parameter 0 and size parameter 1. 
 
 
 \subsection{}
 \textit{For each $x_{i},$ compute $\beta_{i}=p\left(x_{i}\right) / p\left(x_{\text {mode }}\right)$.}
+
+See mathematica notebook
 
 
 \subsection{}
@@ -401,8 +407,16 @@ This form of $V_{\mathrm{N}, 3+d}(r \gg R)$ implies that $\frac{G_{N, 3+d}}{R}=G
 \subsection{}
 \textit{Make a histogram of all the retained values of $x_{i} .$ As you increase the number of random numbers $r_{i}$ generated, your histogram will get closer and closer to the parent probability distribution. However, it's useful to do the exercise for small sample sizes when you are simulating an experiment with a modest data sample.}
 
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/histogram.pdf}
+    \label{fig:my_label}
+\end{figure}
 \subsection{}
 \textit{Explain why this method works.}
+
+This method takes advantage of uniform distributions and $x_{mode}$ by "filtering out" values from a uniform distribution that are more rare in the parent distribution. By knowing the probability of finding $x_{mode}$, ratios of the sample probability to the mode probability will be larger than a random value between 0 and 1 if there are more occurrences of $x_i$ within our selected interval $(a,b)$. 
+
+
 
 \end{document}
