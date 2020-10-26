@@ -322,7 +322,6 @@ $$ B_i = \frac{N_\mathrm{observed\, decays\, in\, mode\, i}}{N_\mathrm{observed\
 \section{Gravity with compactified dimensions.}
 \textit{In an interesting speculation, it has been suggested (Arkani-Hamad $1998,1999,$ Antoniadis $e t\, al.$ 1998 ) that the weakness of gravity as observed our (apparently) three-dimensional world could be due to the fact that gravity actually extends into additional 'compactified' dimensions (that is, dimensiong which have the geometry of a circle, rather than of an infinite line). For the particles and forces of the Standard Model, however, such leakage into extra dimensions has to be confined to currently probed distances, which are of order $M_{\mathrm{W}}^{-1}.$}
 
-
 \subsection{}
 \textit{Consider Newtonian gravity in $(3+d)$ spatial dimensions. Explain why you would expect that the gravitational potential will have the form of (1.36), 
 $$
@@ -330,23 +329,39 @@ V_{\mathrm{N}, 3+d}(r)=-\frac{m_{1} m_{2} G_{\mathrm{N}, 3+d}}{r^{d+1}}
 $$
 [Think about how the ``1/r" fall-off of the force is related to the surface area of a sphere in the case $d=0 .$ Note that the formula works for $d=-2 !$ What happens in the case $d=-1 ?]$}
 
+
+Analogously with electromagnetism, a surface integral should give the flux of the field lines, a scalar. in 2 dimensions, that's 
+
+\begin{align*}
+    \oint_{\mathrm{S^2}}\left(\frac{e}{R^{2}} \hat{r}\right) \cdot \hat{r} d s &=\oint \frac{e}{R^{2}} R^{2} d \Omega\\
+    &= 4 \pi e,
+\end{align*}
+which implies that in two dimensions $d = -1$. It is reasonable that a volume element in $3+d$ dimensions would be bounded by a $3 + d - 1$ dimensional surface. The force then could go as $\frac{1}{r^{2+d}}$ and the potential would go as $F \cdot r \propto \frac{1}{r^{1+d}}$
+
 \subsection{}
 \textit{Show that $G_{\mathrm{N}, 3+d}$ has dimensions (mass) $^{-(2+d)} .$ This allows us to introduce the 'true' Planck scale - i.e. the one for the underlying theory in $3+d$ spatial dimensions $-$ as $G_{\mathrm{N}, 3+d}=\left(M_{\mathrm{P}, 3+d}\right)^{-(2+d)}$}
+
+\begin{align*}
+    \left[G_{N, 3 + d}\right]&=\left[V_{N, 3+d}(r)\right]\left[r^{1+d}\right]\left[M^{-2}\right]\\
+    &=M M^{-(1+d)} M^{-2}
+\end{align*}
+
+$$\boxed{\left[G_{N, 3 + d}\right] = M^{-(2 + d)}}$$
 
 \subsection{}
 \textit{Now suppose that the form (1.36) only holds when the distance $r$ between the masses is much smaller $R,$ the size of the compactified dimensions. If the masses are placed at distances $r \gg R,$ their gravitational flux cannot continue to penetrate into the extra di- mensions, and the potential (1.36) should reduce to the familiar three-dimensional one; so we must have
 $$
 V_{\mathrm{N}, 3+d}(r \gg R)=-\frac{m_{1} m_{2} G_{\mathrm{N}, 3+d}}{R^{d}} \frac{1}{r}
-$$}
-
-\subsection{}
-\textit{Show that this implies that
+$$
+Show that this implies that
 $$
 M_{\mathrm{P}}^{2}=M_{\mathrm{P}, 3+d}^{2}\left(R M_{\mathrm{P}, 3+d}\right)^{d}
-$$
-Suppose that $d=2$ and $R \sim 1 \mathrm{mm}$ : what would $M_{\mathrm{P}, 3+d}$ be, in TeV? Suggest ways in which this theory might be tested experimentally. Taking $M \mathrm{p}, 3+d \sim 1 \mathrm{TeV},$ explore other possibilities for $d$ and $R$.}
+$$}
 
-
+This form of $V_{\mathrm{N}, 3+d}(r \gg R)$ implies that $\frac{G_{N, 3+d}}{R}=G_{N}$.
+\subsection{}
+\textit{Suppose that $d=2$ and $R \sim 1 \mathrm{mm}$ : what would $M_{\mathrm{P}, 3+d}$ be, in TeV? Suggest ways in which this theory might be tested experimentally. Taking $M \mathrm{p}, 3+d \sim 1 \mathrm{TeV},$ explore other possibilities for $d$ and $R$.}
+$M \mathrm{p}, 3+d \sim 1 \mathrm{TeV},$
 \newpage
 
 
